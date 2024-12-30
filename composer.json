@@ -1,0 +1,20 @@
+{
+    "name": "gab3mioni/php-kidopi",
+    "description": "Exercício proposto durante processo seletivo para estagiário PHP na Kidopi.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Mioni",
+            "email": "gabrielmionibastos@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-json": "*",
+      "ext-pdo": "*"
+    }
+}
