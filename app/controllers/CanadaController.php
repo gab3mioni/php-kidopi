@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class CanadaController extends CovidController
 {
-    public function index(): void   
+    public function index(): void
     {
-        $country = 'canada';
+        $country = 'Canada';
 
         $covidData = $this->fetchCovidData($country);
 

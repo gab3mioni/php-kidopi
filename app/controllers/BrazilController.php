@@ -6,7 +6,7 @@ class BrazilController extends CovidController
 {
     public function index(): void
     {
-        $country = 'brazil';
+        $country = 'Brazil';
 
         $covidData = $this->fetchCovidData($country);
 
