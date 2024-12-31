@@ -26,4 +26,9 @@ class CovidService
     {
         $this->apiCallModel->logApiCall($country);
     }
+
+    public function getLastApiCall(): ?array
+    {
+        return $this->apiCallModel->getLastApiCall();
+    }
 }

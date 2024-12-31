@@ -12,4 +12,10 @@ class ApiCallModel extends BaseModel
         ];
         return $this->executeQuery($query, $params);
     }
+
+    public function getLastApiCall(): ?array
+    {
+        $query = "SELECT country, created_at FROM ApiCalls ORDER BY id DESC LIMIT 1";
+        return $this->fetchSingleRow($query);
+    }
 }

@@ -22,4 +22,16 @@ class BaseModel
         }
         return $stmt->execute();
     }
+
+    protected function fetchSingleRow(string $query, array $params = []): ?array
+    {
+        $stmt = $this->pdo->prepare($query);
+        foreach ($params as $key => $value) {
+            $stmt->bindValue($key, $value);
+        }
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result ?: null;
+    }
 }
