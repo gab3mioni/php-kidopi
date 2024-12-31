@@ -1,34 +1,17 @@
 <?php
+
 namespace App\Controllers;
 
-use App\Services\CovidService;
-use App\Models\CovidModel;
-use Core\Controller;
-
-class BrazilController extends Controller
+class BrazilController extends CovidController
 {
-    private CovidService $covidService;
-
-    public function __construct()
-    {
-        $this->covidService = new CovidService();
-    }
-
     public function index(): void
     {
-        $apiData = $this->covidService->getCovidDataByCountry('brazil');
-        $covidModel = new CovidModel($apiData);
+        $country = 'brazil';
 
-        $statesData = $covidModel->getStatesData();
-        $totalCases = $covidModel->getTotalCases();
-        $totalDeaths = $covidModel->getTotalDeaths();
+        $covidData = $this->fetchCovidData($country);
 
-        $this->covidService->checkApiCall('brazil');
+        $this->logApiCall($country);
 
-        $this->view('brazil', [
-            'statesData' => $statesData,
-            'totalCases' => $totalCases,
-            'totalDeaths' => $totalDeaths
-        ]);
+        $this->renderCovidView($country, $covidData);
     }
 }
