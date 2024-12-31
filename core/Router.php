@@ -4,7 +4,7 @@ namespace Core;
 
 class Router
 {
-    public function dispatch($url): void
+    public function dispatch(string $url): void
     {
         $url = explode('/', filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL));
 
