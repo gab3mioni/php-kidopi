@@ -8,12 +8,42 @@
 </head>
 <body class="bg-light">
 <div class="container py-5">
-    <header class="mb-4 text-center">
-        <h1 class="text-primary">Covid Data - Canada</h1>
-        <p class="lead">Monitoramento dos casos de Covid-19 no Canada</p>
+    <header>
+        <div class="container">
+            <h1 class="text-center">Bem-vindo à InfoCovid!</h1>
+        </div>
     </header>
 
-    <div class="row mb-4">
+    <main>
+        <div class="container text-center mt-4">
+            <p>Escolha um país para saber mais:</p>
+
+            <div class="btn-group" role="group" aria-label="Navegação por países">
+                <div class="">
+                    <a href="brazil">
+                        <img src="https://www.worldometers.info/img/flags/br-flag.gif" alt="Bandeira do Brasil"
+                             class="country-image" height="64" width="64">
+                    </a>
+                </div>
+
+                <div class="mx-3">
+                    <a href="canada">
+                        <img src="https://www.worldometers.info/img/flags/ca-flag.gif" alt="Bandeira dos Canadá"
+                             class="country-image" height="64" width="64">
+                    </a>
+                </div>
+
+                <div>
+                    <a href="australia">
+                        <img src="https://www.worldometers.info/img/flags/as-flag.gif" alt="Bandeira da Austrália"
+                             class="country-image" height="64" width="64">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="row my-4">
         <div class="col-md-6">
             <div class="card border-primary mb-3">
                 <div class="card-body">
@@ -50,10 +80,6 @@
         <?php endforeach; ?>
         </tbody>
     </table>
-
-    <div class="text-center mt-4">
-        <a href="home" class="btn btn-primary">Voltar para Home</a>
-    </div>
 </div>
 
 <footer class="mt-auto bg-light text-center py-3">
