@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid Data - Canada</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>InfoCovid | Canada</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container py-5">
@@ -39,6 +39,45 @@
                              class="country-image" height="64" width="64">
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <p class="text-center">Para comparar a taxa de mortalidade de outros países:</p>
+
+            <div class="d-flex justify-content-center">
+                <button id="toggleFormButton" class="btn btn-primary">
+                    Comparar países
+                </button>
+            </div>
+
+            <div id="compareForm" class="mx-auto p-3 border rounded bg-white"
+                 style="display: none; width: 50%; margin-top: 20px;">
+                <form action="covidCompare" method="POST" class="mt-4">
+                    <div class="form-group">
+                        <label for="country1">Selecione o primeiro país:</label>
+                        <select name="country1" id="country1" class="form-control" required>
+                            <option value="">Escolha um país</option>
+                            <?php foreach ($countries as $country): ?>
+                                <option value="<?= htmlspecialchars($country) ?>">
+                                    <?= htmlspecialchars($country) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="country2">Selecione o segundo país:</label>
+                        <select name="country2" id="country2" class="form-control" required>
+                            <option value="">Escolha um país</option>
+                            <?php foreach ($countries as $country): ?>
+                                <option value="<?= htmlspecialchars($country) ?>">
+                                    <?= htmlspecialchars($country) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Comparar</button>
+                </form>
             </div>
         </div>
     </main>
@@ -91,6 +130,10 @@
     <?php endif; ?>
 </footer>
 
+<script src="js/compare.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
