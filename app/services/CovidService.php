@@ -31,4 +31,10 @@ class CovidService
     {
         return $this->apiCallModel->getLastApiCall();
     }
+
+    public function fetchAvailableCountries(): array
+    {
+        $url = 'https://dev.kidopilabs.com.br/exercicio/covid.php?listar_paises=1';
+        return json_decode(file_get_contents($url), true) ?? [];
+    }
 }
