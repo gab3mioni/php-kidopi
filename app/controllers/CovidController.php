@@ -35,6 +35,7 @@ class CovidController extends Controller
     protected function renderCovidView(string $country, array $data): void
     {
         $data['lastApiCall'] = $this->covidService->getLastApiCall();
+        $data['countries'] = $this->covidService->fetchAvailableCountries();
         $this->view($country, $data);
     }
 }

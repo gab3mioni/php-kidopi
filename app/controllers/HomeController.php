@@ -16,8 +16,8 @@ class HomeController extends Controller
 
     public function index(): void
     {
-        $lastApiCall = $this->covidService->getLastApiCall();
-        $data['lastApiCall'] = $lastApiCall;
+        $data['lastApiCall'] = $this->covidService->getLastApiCall();
+        $data['countries'] = $this->covidService->fetchAvailableCountries();
         $this->view('home', $data);
     }
 }
